@@ -1,0 +1,41 @@
+Enter file contents here/*Demonstrates function recursion.  Calculates the factorial of a number.*/
+
+//Include C library functions
+#include <stdio.h>
+
+//Declare variables
+unsigned int f, x;
+
+//Define user functions
+unsigned int factorial (unsigned int a);
+
+//Define main function
+int main (void)
+{
+puts ("Enter an integer value between 1 and 8: ");
+scanf ("%d", &x);
+
+if (x > 8 || x < 1)
+{
+    printf("Only values from 1 to 8 are acceptable!");
+}
+else
+{
+    f = factorial (x);
+    printf ("%u factorial equals %u\n", x, f);
+}
+return 0;
+}
+
+//Factorial function
+unsigned int factorial (unsigned int a)
+{
+      if (a == 1)
+        return 1;
+
+    else
+    {
+    a *= factorial (a-1);
+    return a;
+    }
+}
